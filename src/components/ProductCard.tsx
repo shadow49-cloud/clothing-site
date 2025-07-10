@@ -25,10 +25,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             alt={product.name}
             className="w-full h-64 object-cover group-hover:scale-105 group-hover:rotate-1 transition-transform duration-700"
           />
-          <div className="absolute top-4 right-4 space-y-2">
+          <div className="absolute top-4 left-4">
             <button className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white hover:rotate-12 transition-all duration-200">
               <Heart className="w-4 h-4 text-gray-600" />
             </button>
+          </div>
+          <div className="absolute top-4 right-4">
             <button
               onClick={handleAddToCart}
               className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white hover:rotate-12 transition-all duration-200"
