@@ -11,21 +11,15 @@ const HomePage: React.FC = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen bg-sky-100 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-sky-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-40 h-40 bg-violet-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-40 w-36 h-36 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse animation-delay-4000"></div>
-        </div>
-        
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Dream in
-                <span className="text-slate-600"> Color</span>
+                Express Your
+                <span className="text-slate-600"> Style</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-lg">
-                Discover our magical collection of clothing that brings joy, comfort, and color to your everyday adventures.
+                Discover our magical collection of clothing that brings joy, comfort, and personality to your everyday adventures.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link
@@ -69,21 +63,21 @@ const HomePage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="w-16 h-16 bg-sky-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 gravity-animation">
+              <div className="w-16 h-16 bg-sky-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                 <Truck className="w-8 h-8 text-slate-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Free Shipping</h3>
               <p className="text-gray-600">Free shipping on all orders over $50. Fast and reliable delivery.</p>
             </div>
             <div className="text-center group">
-              <div className="w-16 h-16 bg-rose-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 bounce-gravity">
+              <div className="w-16 h-16 bg-rose-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                 <Shield className="w-8 h-8 text-rose-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Quality Guarantee</h3>
               <p className="text-gray-600">Premium materials and craftsmanship. 30-day return policy.</p>
             </div>
             <div className="text-center group">
-              <div className="w-16 h-16 bg-violet-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300 gravity-animation">
+              <div className="w-16 h-16 bg-violet-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
                 <HeartHandshake className="w-8 h-8 text-violet-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Made with Love</h3>
