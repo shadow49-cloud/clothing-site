@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-8 h-8 bg-sky-200 rounded-full flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 gravity-animation">
+            <div className="w-8 h-8 bg-sky-200 rounded-full flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
               <Heart className="w-4 h-4 text-slate-600" />
             </div>
             <span className="text-xl font-bold text-gray-800 group-hover:text-slate-600 transition-colors duration-300">
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <button className="p-2 text-gray-700 hover:text-slate-600 transition-colors duration-300 gravity-animation">
+            <button className="p-2 text-gray-700 hover:text-slate-600 transition-colors duration-300">
               <Search className="w-5 h-5" />
             </button>
             
@@ -92,11 +92,11 @@ const Header: React.FC = () => {
 
             <button
               onClick={toggleCart}
-              className="relative p-2 text-gray-700 hover:text-slate-600 transition-colors duration-300 gravity-animation"
+              className="relative p-2 text-gray-700 hover:text-slate-600 transition-colors duration-300"
             >
               <ShoppingBag className="w-5 h-5" />
               {getTotalItems() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-rose-300 text-slate-700 text-xs rounded-full w-5 h-5 flex items-center justify-center bounce-gravity">
+                <span className="absolute -top-1 -right-1 bg-rose-300 text-slate-700 text-xs rounded-full w-5 h-5 flex items-center justify-center">
                   {getTotalItems()}
                 </span>
               )}

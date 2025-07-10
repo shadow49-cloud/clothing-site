@@ -93,7 +93,7 @@ const Cart: React.FC = () => {
               </div>
               <button
                 onClick={handleCheckout}
-                className="w-full bg-sky-300 text-slate-700 py-3 rounded-lg font-medium hover:bg-sky-400 transition-all duration-300 transform hover:scale-105 hover:rotate-1 gravity-animation"
+                className="w-full bg-sky-300 text-slate-700 py-3 rounded-lg font-medium hover:bg-sky-400 transition-all duration-300 transform hover:scale-105 hover:rotate-1"
               >
                 Checkout
               </button>
