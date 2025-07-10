@@ -108,18 +108,3 @@ input:focus, select:focus, textarea:focus, button:focus {
     transform: translateY(-20px);
   }
 }
-
-.card-gravity {
-  transition: transform 0.3s ease;
-}
-
-.card-gravity:hover {
-  animation: cardGravity 0.6s ease-in-out;
-}
-
-@keyframes cardGravity {
-  0% { transform: translateY(0px); }
-  30% { transform: translateY(-8px); }
-  60% { transform: translateY(-3px); }
-  100% { transform: translateY(-6px); }
-}
