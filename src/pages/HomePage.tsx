@@ -38,15 +38,13 @@ const HomePage: React.FC = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="relative z-10">
+              <div>
                 <img
                   src="https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=800"
                   alt="Featured Fashion"
                   className="rounded-3xl shadow-2xl transform rotate-3 hover:rotate-6 hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-rose-200 rounded-full opacity-50"></div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-violet-200 rounded-full opacity-50"></div>
             </div>
           </div>
         </div>
