@@ -17,9 +17,6 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="w-6 h-6 bg-gradient-to-br from-sky-300 to-violet-300 rounded-full flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
-              <span className="text-xs font-bold text-slate-700">N</span>
-            </div>
             <div className="w-8 h-8 bg-sky-200 rounded-full flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
               <Heart className="w-4 h-4 text-slate-600" />
             </div>
