@@ -4,12 +4,14 @@ import { Star, Heart, ShoppingBag, Truck, Shield, RotateCcw, ChevronLeft, Chevro
 import { products } from '../data/products';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useWishlist } from '../context/WishlistContext';
 import ProductCard from '../components/ProductCard';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { addToCart } = useCart();
   const { isAuthenticated, user } = useAuth();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   
   const product = products.find(p => p.id === id);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -39,6 +41,8 @@ const ProductPage: React.FC = () => {
 
   // Suggested products (excluding current product)
   const suggestedProducts = products.filter(p => p.id !== product.id && p.category === product.category).slice(0, 4);
+  
+  const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = () => {
     if (!selectedSize) {
@@ -46,6 +50,14 @@ const ProductPage: React.FC = () => {
       return;
     }
     addToCart(product, selectedSize, quantity);
+  };
+
+  const handleWishlistToggle = () => {
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   const nextImage = () => {
@@ -275,9 +287,16 @@ const ProductPage: React.FC = () => {
                 <ShoppingBag className="w-5 h-5" />
                 <span>Add to Cart</span>
               </button>
-              <button className="w-full border-2 border-sky-300 text-sky-600 py-4 rounded-lg font-semibold hover:bg-sky-50 transition-colors flex items-center justify-center space-x-2">
-                <Heart className="w-5 h-5" />
-                <span>Add to Wishlist</span>
+              <button 
+                onClick={handleWishlistToggle}
+                className={`w-full border-2 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 ${
+                  inWishlist 
+                    ? 'border-red-300 text-red-600 bg-red-50 hover:bg-red-100' 
+                    : 'border-sky-300 text-sky-600 hover:bg-sky-50'
+                }`}
+              >
+                <Heart className={`w-5 h-5 ${inWishlist ? 'fill-current' : ''}`} />
+                <span>{inWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}</span>
               </button>
             </div>
 

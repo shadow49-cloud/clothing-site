@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag, Heart } from 'lucide-react';
 import { Product } from '../types';
 import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 interface ProductCardProps {
   product: Product;
@@ -10,10 +11,22 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  
+  const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     addToCart(product, product.sizes[0]);
+  };
+
+  const handleWishlistToggle = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   return (
@@ -27,7 +40,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           />
           <div className="absolute top-4 left-4">
             <button className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white hover:rotate-12 transition-all duration-200">
-              <Heart className="w-4 h-4 text-gray-600" />
+              <button
+                onClick={handleWishlistToggle}
+                className="p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white hover:rotate-12 transition-all duration-200"
+              >
+                <Heart className={`w-4 h-4 ${inWishlist ? 'text-red-500 fill-current' : 'text-gray-600'}`} />
+              </button>
             </button>
           </div>
           <div className="absolute top-4 right-4">
