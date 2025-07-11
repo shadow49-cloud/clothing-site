@@ -346,9 +346,11 @@ const ProductPage: React.FC = () => {
           {activeTab === 'reviews' && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                  onClick={() => setShowReviewModal(true)}
                 <h3 className="text-xl font-semibold text-gray-900">Customer Reviews ({reviews.length})</h3>
-                <button className="bg-sky-300 text-slate-700 px-4 py-2 rounded-lg font-medium hover:bg-sky-400 transition-colors">
+                <button 
+                  onClick={() => setShowReviewModal(true)}
+                  className="bg-sky-300 text-slate-700 px-4 py-2 rounded-lg font-medium hover:bg-sky-400 transition-colors"
+                >
                   Write a Review
                 </button>
               </div>
